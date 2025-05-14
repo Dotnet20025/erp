@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- باقي التعريفات كما في القالب السابق -->
+    <title>ERP | إدارة أصناف الذهب</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+   <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet">
+   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+   <link href="vendor/select2/select2.css" rel="stylesheet" type="text/css" />
+   <link href="vendor/select2/select2-bootstrap4.css" rel="stylesheet" type="text/css" />
+   <link href="css/template.css" rel="stylesheet" />
+   <!-- Custom styles for this template-->
+   <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <!-- القائمة الجانبية المعدلة -->
+        <!-- <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+          
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseGold" aria-expanded="true">
+                    <i class="fas fa-gem"></i>
+                    <span>إدارة الذهب</span>
+                </a>
+                <div id="collapseGold" class="collapse show">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">مكونات الذهب:</h6>
+                        <a class="collapse-item active" href="./gold-items.html">الأصناف</a>
+                       
+                    </div>
+                </div>
+            </li>
+        </ul> -->
+         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <div class="sidebar-brand-icon rotate-n-15">ERP</div>
+            <div class="sidebar-brand-text mx-3">Management</div>
+         </a>
+
+         <!-- Divider -->
+         <hr class="sidebar-divider my-0" />
+
+         <li class="nav-item">
+            <a class="nav-link" href="index.html">
+               <i class="fas fa-fw fa-tachometer-alt"></i>
+               <span>Dashboard</span></a>
+         </li>
+
+         <li class="nav-item active">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+               aria-controls="collapseTwo">
+               <i class="fas fa-fw fa-cog"></i>
+               <span>HR Configure</span>
+            </a>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+               <div class="bg-white py-2 collapse-inner rounded">
+                  <h6 class="collapse-header">Employee Components:</h6>
+                  <a class="collapse-item" href="./region-setup.html">Region</a>
+                  <a class="collapse-item" href="./office-setup.html">Office</a>
+                  <a class="collapse-item" href="./department-setup.html">Department</a>
+                  <a class="collapse-item" href="./section.html">Section</a>
+                  <a class="collapse-item" href="./sub-section.html">Sub-Section</a>
+                  <a class="collapse-item" href="./designation.html">Designation</a>
+                  <a class="collapse-item" href="./holiday-setup.html">Holiday</a>
+                  <a class="collapse-item" href="./salary-setting.html">Salary Setting</a>
+                  <a class="collapse-item" href="./salary-assign.html">Salary Assign</a>
+                  <a class="collapse-item active" href="./leave-apply.html">Leave Apply</a>
+                  <a class="collapse-item" href="./employee-profile.html">Employee Profile</a>
+               </div>
+            </div>
+         </li>
+
+         <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+               aria-expanded="true" aria-controls="collapsePages">
+               <i class="fas fa-fw fa-folder"></i>
+               <span>Pages</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+               <div class="bg-white py-2 collapse-inner rounded">
+                  <h6 class="collapse-header">Login Screens:</h6>
+                  <a class="collapse-item" href="login.html">Login</a>
+                  <a class="collapse-item" href="register.html">Register</a>
+                  <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                  <div class="collapse-divider"></div>
+                  <h6 class="collapse-header">Other Pages:</h6>
+                  <a class="collapse-item" href="404.html">404 Page</a>
+                  <a class="collapse-item" href="blank.html">Blank Page</a>
+               </div>
+            </div>
+         </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseGold" aria-expanded="true">
+                    <i class="fas fa-gem"></i>
+                    <span>إدارة الذهب</span>
+                </a>
+                <div id="collapseGold" class="collapse show"  aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">مكونات الذهب:</h6>
+                        <a class="collapse-item active" href="./gold-items.html">الأصناف</a>
+                        <!-- <a class="collapse-item" href="./gold-units.html">الوحدات</a>
+                        <a class="collapse-item" href="./gold-purity.html">العيارات</a> -->
+                    </div>
+                </div>
+            </li>
+         <!-- Sidebar Toggler (Sidebar) -->
+         <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+         </div>
+      </ul>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- نفس التوب بار السابق -->
+ <!-- Topbar -->
+         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+               <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Search -->
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+               <div class="input-group">
+                  <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                     aria-label="Search" aria-describedby="basic-addon2" />
+                  <div class="input-group-append">
+                     <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                     </button>
+                  </div>
+               </div>
+            </form>
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+               <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+               <li class="nav-item dropdown no-arrow d-sm-none">
+                  <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                     <i class="fas fa-search fa-fw"></i>
+                  </a>
+                  <!-- Dropdown - Messages -->
+                  <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                     aria-labelledby="searchDropdown">
+                     <form class="form-inline mr-auto w-100 navbar-search">
+                        <div class="input-group">
+                           <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                              aria-label="Search" aria-describedby="basic-addon2" />
+                           <div class="input-group-append">
+                              <button class="btn btn-primary" type="button">
+                                 <i class="fas fa-search fa-sm"></i>
+                              </button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </li>
+
+               <!-- Nav Item - Alerts -->
+               <li class="nav-item dropdown no-arrow mx-1">
+                  <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                     <i class="fas fa-bell fa-fw"></i>
+                     <!-- Counter - Alerts -->
+                     <span class="badge badge-danger badge-counter">3+</span>
+                  </a>
+                  <!-- Dropdown - Alerts -->
+                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                     aria-labelledby="alertsDropdown">
+                     <h6 class="dropdown-header">Alerts Center</h6>
+                     <a class="dropdown-item d-flex align-items-center" href="#">
+                        <div class="mr-3">
+                           <div class="icon-circle bg-primary">
+                              <i class="fas fa-file-alt text-white"></i>
+                           </div>
+                        </div>
+                        <div>
+                           <div class="small text-gray-500">December 12, 2019</div>
+                           <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                        </div>
+                     </a>
+                     <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                  </div>
+               </li>
+
+               <!-- Nav Item - Messages -->
+               <li class="nav-item dropdown no-arrow mx-1">
+                  <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fas fa-envelope fa-fw"></i>
+                     <!-- Counter - Messages -->
+                     <span class="badge badge-danger badge-counter">7</span>
+                  </a>
+                  <!-- Dropdown - Messages -->
+                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                     aria-labelledby="messagesDropdown">
+                     <h6 class="dropdown-header">Message Center</h6>
+                     <a class="dropdown-item d-flex align-items-center" href="#">
+                        <div class="dropdown-list-image mr-3">
+                           <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="..." />
+                           <div class="status-indicator bg-success"></div>
+                        </div>
+                        <div class="font-weight-bold">
+                           <div class="text-truncate">
+                              Hi there! I am wondering if you can help me with a problem
+                              I've been having.
+                           </div>
+                           <div class="small text-gray-500">Emily Fowler · 58m</div>
+                        </div>
+                     </a>
+
+                     <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                  </div>
+               </li>
+
+               <div class="topbar-divider d-none d-sm-block"></div>
+
+               <!-- Nav Item - User Information -->
+               <li class="nav-item dropdown no-arrow">
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                     <img class="img-profile rounded-circle" src="img/undraw_profile.svg" />
+                  </a>
+                  <!-- Dropdown - User Information -->
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                     aria-labelledby="userDropdown">
+                     <a class="dropdown-item" href="#">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Profile
+                     </a>
+                     <a class="dropdown-item" href="#">
+                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Settings
+                     </a>
+                     <a class="dropdown-item" href="#">
+                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Activity Log
+                     </a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Logout
+                     </a>
+                  </div>
+               </li>
+            </ul>
+         </nav>
+
+         
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 mb-4">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h1 class="h6 mb-0 text-gray-800 ">قائمة أصناف الذهب</h1>
+                                    <button type="button" class="btn bg-primary" data-toggle="modal" data-target="#addGoldItemModal">
+                                        <i class="fas fa-plus-circle"></i> إضافة صنف جديد
+                                    </button>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="table-responsive" style="overflow-x: auto;">
+                                        <table id="goldItemsTable" class="table table-bordered table-hover ">
+                                            <thead class="bg-primary text-white">
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>الصورة</th>
+                                                    <th>الكود</th>
+                                                    <th>الاسم</th>
+                                                    <th>المجموعة</th>
+                                                    <th>العيار</th>
+                                                    <th>الوزن (جرام)</th>
+                                                    <th>سعر الجملة</th>
+                                                    <th>سعر التجزئة</th>
+                                                     <th>تاريخ الإضافة</th>
+                                                    <th>الحالة</th>
+                                                    <th>الإجراءات</th>
+                                                     
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                               
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td><img src="images/gold-ring.png" width="50" class="img-thumbnail"></td>
+                                                    <td>GOLD-001</td>
+                                                    <td>خاتم ذهب عيار 21</td>
+                                                     <td>سبائك</td>
+                                                    <td>21 قيراط</td>
+                                                    <td>5.5</td>
+                                                    <td>2,500 ريال</td>
+                                                    <td>2,750 ريال</td>
+                                                    <td>2025-5-12</td>
+                                                    <td>نشط</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editGoldItemModal">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                        <button class="btn btn-sm btn-danger" onclick="deleteGoldItem(1)">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مودال إضافة صنف ذهب -->
+            <div class="modal fade" id="addGoldItemModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h5 class="modal-title">إضافة صنف ذهب جديد</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                           <!-- <form id="goldItemForm" enctype="multipart/form-data">
+                            <div class="modal-body">
+                                <div class="row">
+                               
+                                    <div class="col-md-6 border-right">
+                                        <div class="form-group">
+                                            <label>المجموعة <span class="text-danger">*</span></label>
+                                            <select class="form-control select2" name="item_group" required>
+                                                <option value="1">مجوهرات ذهبية</option>
+                                                <option value="2">سبائك ذهب</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>كود الصنف <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="item_code" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>العيار <span class="text-danger">*</span></label>
+                                            <select class="form-control" name="purity" required>
+                                                <option value="24">24 قيراط</option>
+                                                <option value="21">21 قيراط</option>
+                                                <option value="18">18 قيراط</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>نوع القطعة <span class="text-danger">*</span></label>
+                                            <select class="form-control" name="item_type" required>
+                                                <option value="1">خاتم</option>
+                                                <option value="2">سلسلة</option>
+                                                <option value="3">سوار</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الوزن (جرام) <span class="text-danger">*</span></label>
+                                            <input type="number" step="0.1" class="form-control" name="weight" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>سعر الجملة <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="wholesale_price" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>سعر التجزئة <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="retail_price" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>صورة الصنف</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="item_image">
+                                                <label class="custom-file-label">اختر ملف...</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                               
+                                <div class="border-top mt-3 pt-3">
+                                    <h6 class="text-warning"><i class="fas fa-balance-scale"></i> إدارة الوحدات</h6>
+                                    <div class="row unit-section">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>الوحدة</label>
+                                                <select class="form-control" name="units[]">
+                                                    <option value="gram">جرام</option>
+                                                    <option value="ounce">أونصة</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>معامل التحويل</label>
+                                                <input type="number" step="0.01" class="form-control" name="factors[]">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>سعر البيع</label>
+                                                <input type="number" class="form-control" name="prices[]">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>الباركود</label>
+                                                <input type="text" class="form-control" name="barcodes[]">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="button" class="btn btn-link text-warning add-unit-btn">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                             
+                                <div class="form-group mt-3">
+                                    <label>ملاحظات خاصة:</label>
+                                    <textarea class="form-control" rows="2" name="special_notes"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button>
+                                <button type="submit" class="btn btn-warning">حفظ الصنف</button>
+                            </div>
+                        </form> -->
+
+
+                        <form id="goldItemForm" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <!-- تبويبات رئيسية -->
+                    <ul class="nav nav-tabs" id="itemTabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="main-info-tab" data-toggle="tab" href="#main-info">
+                                <i class="fas fa-info-circle"></i> المعلومات الأساسية
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#inventoryInfo">معلومات المخزون</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="alternatives-tab" data-toggle="tab" href="#alternatives">
+                                <i class="fas fa-exchange-alt"></i> البدائل
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#advancedSettings">الإعدادات المتقدمة</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content pt-3">
+                        <!-- تبويب المعلومات الأساسية -->
+                        <div class="tab-pane fade show active" id="main-info">
+                            <!-- المحتوى الحالي للمعلومات الأساسية -->
+                              <div class="modal-body">
+                                <div class="row">
+                                    <!-- القسم الأيمن -->
+                                    <div class="col-md-6 border-right">
+                                        <div class="form-group">
+                                            <label>المجموعة <span class="text-danger">*</span></label>
+                                            <select class="form-control select2" name="item_group" required>
+                                                <option value="1">مجوهرات ذهبية</option>
+                                                <option value="2">سبائك ذهب</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>كود الصنف <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="item_code" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>العيار <span class="text-danger">*</span></label>
+                                            <select class="form-control" name="purity" required>
+                                                <option value="24">24 قيراط</option>
+                                                <option value="21">21 قيراط</option>
+                                                <option value="18">18 قيراط</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>نوع القطعة <span class="text-danger">*</span></label>
+                                            <select class="form-control" name="item_type" required>
+                                                <option value="1">خاتم</option>
+                                                <option value="2">سلسلة</option>
+                                                <option value="3">سوار</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- القسم الأيسر -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الوزن (جرام) <span class="text-danger">*</span></label>
+                                            <input type="number" step="0.1" class="form-control" name="weight" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>سعر الجملة <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="wholesale_price" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>سعر التجزئة <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="retail_price" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>صورة الصنف</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="item_image">
+                                                <label class="custom-file-label">اختر ملف...</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- قسم الوحدات -->
+                                <div class="border-top mt-3 pt-3">
+                                    <h6 class="text-warning"><i class="fas fa-balance-scale"></i> إدارة الوحدات</h6>
+                                    <div class="row unit-section">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>الوحدة</label>
+                                                <select class="form-control" name="units[]">
+                                                    <option value="gram">جرام</option>
+                                                    <option value="ounce">أونصة</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>معامل التحويل</label>
+                                                <input type="number" step="0.01" class="form-control" name="factors[]">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>سعر البيع</label>
+                                                <input type="number" class="form-control" name="prices[]">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>الباركود</label>
+                                                <input type="text" class="form-control" name="barcodes[]">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="button" class="btn btn-link text-warning add-unit-btn">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- معلومات إضافية -->
+                                <div class="form-group mt-3">
+                                    <label>ملاحظات خاصة:</label>
+                                    <textarea class="form-control" rows="2" name="special_notes"></textarea>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- تبويب إدارة المخزون -->
+                        <div class="tab-pane fade" id="inventoryInfo">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>الحد الأدنى للطلب</label>
+                                        <input type="number" class="form-control" name="minOrder">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>الوزن (جرام) <span class="text-danger">*</span></label>
+                                        <input type="number" step="0.1" class="form-control" name="weight" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>العيار <span class="text-danger">*</span></label>
+                                        <select class="form-control select2" name="karat" required>
+                                            <!-- سيتم ملء الخيارات عبر AJAX -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- تبويب البدائل -->
+                        <div class="tab-pane fade" id="alternatives">
+                            <div class="alert alert-info">
+                                يمكنك إضافة أصناف بديلة لهذا الصنف
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-9">
+                                    <select class="form-control select2" id="alternativeSearch">
+                                        <option></option>
+                                        <!-- سيتم ملء الخيارات عبر AJAX -->
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="button" class="btn btn-success btn-block" id="addAlternative">
+                                        <i class="fas fa-plus"></i> إضافة بديل
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="alternativesTable">
+                                    <thead>
+                                        <tr>
+                                            <th>كود الصنف</th>
+                                            <th>الاسم</th>
+                                            <th>الإجراءات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- سيتم ملء البيانات ديناميكيًا -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                          <!-- تبويب الإعدادات المتقدمة -->
+                        <div class="tab-pane fade" id="advancedSettings">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>المورد</label>
+                                        <select class="form-control select2" name="supplier">
+                                            <!-- سيتم ملء الخيارات عبر AJAX -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>بلد المنشأ</label>
+                                        <input type="text" class="form-control" name="originCountry">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>صورة الصنف</label>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="itemImage">
+                                            <label class="custom-file-label">اختر ملف...</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>البدائل</label>
+                                        <select class="form-control select2" name="alternatives[]" multiple>
+                                            <!-- سيتم ملء الخيارات عبر AJAX -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                <!-- ... باقي الفورم ... -->
+                 <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button>
+                                <button type="submit" class="btn btn-warning">حفظ الصنف</button>
+                            </div>
+            </form>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- نافذة التعديل (بنفس هيكل الإضافة) -->
+            
+           
+        </div>
+    </div>
+   <!-- Bootstrap core JavaScript-->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <script src="vendor/jquery-blockui/jquery.blockUI.js"></script>
+      <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+      <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+      <script src="vendor/bootbox/bootbox.min.js"></script>
+      <script src="vendor/bootbox/bootbox.locales.min.js"></script>
+      <script src="vendor/select2/select2.js"></script>
+      <script src="vendor/jquery-validation/jquery.validate.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="js/main.js"></script>
+     <!-- السكربتات -->
+            <script>
+                // إدارة الوحدات الديناميكية
+                $(document).on('click', '.add-unit-btn', function(){
+                    const newUnit = $('.unit-section').first().clone();
+                    newUnit.find('input').val('');
+                    newUnit.find('.add-unit-btn').html('<i class="fas fa-times text-danger"></i>').removeClass('add-unit-btn').addClass('remove-unit-btn');
+                    $('#goldItemForm .unit-section').last().after(newUnit);
+                });
+
+                $(document).on('click', '.remove-unit-btn', function(){
+                    $(this).closest('.unit-section').remove();
+                });
+
+                // التحقق من الصيغة
+                $('#goldItemForm').validate({
+                    rules: {
+                        item_group: "required",
+                        item_code: "required",
+                        purity: "required",
+                        weight: {
+                            required: true,
+                            min: 0.1
+                        }
+                    },
+                    messages: {
+                        item_group: "حدد مجموعة الصنف",
+                        item_code: "أدخل كود فريد للصنف",
+                        purity: "اختر عيار الذهب",
+                        weight: "الوزن يجب أن يكون أكبر من 0"
+                    },
+                    submitHandler: function(form) {
+                        const formData = new FormData(form);
+                        
+                        // هنا سيتم إرسال البيانات إلى الخادم
+                        $.ajax({
+                            url: 'save_gold_item.php',
+                            method: 'POST',
+                            data: formData,
+                            processData: false,
+                            contentType: false,
+                            success: function(response){
+                                // معالجة الاستجابة
+                            }
+                        });
+                    }
+                });
+
+                // تهيئة الجدول
+                $(document).ready(function() {
+                    $('#goldItemsTable').DataTable({
+                        "language": {
+                            "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Arabic.json"
+                        },
+                        "columnDefs": [
+                            { "orderable": false, "targets": [1,8] }
+                        ]
+                    });
+                });
+
+                // دالة الحذف
+                function deleteGoldItem(id) {
+                    bootbox.confirm({
+                        message: "هل تريد حذف هذا الصنف الذهبي بشكل دائم؟",
+                        buttons: {
+                            confirm: {
+                                label: 'تأكيد الحذف',
+                                className: 'btn-danger'
+                            },
+                            cancel: {
+                                label: 'إلغاء',
+                                className: 'btn-secondary'
+                            }
+                        },
+                        callback: function(result) {
+                            if (result) {
+                                // كود الحذف
+                            }
+                        }
+                    });
+                }
+            </script>
+</body>
+</html>
